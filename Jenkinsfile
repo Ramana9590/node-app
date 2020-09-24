@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                sh "docker build . -t ramana3/nodeapp:
+                sh "docker build . -t ramana3/nodeapp:${DOCKER_TAG}"
             }
         }
     }
