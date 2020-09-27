@@ -1,4 +1,4 @@
-FROM node:carbon
+FROM node:12
 
 
 # Create app directory
@@ -19,15 +19,3 @@ COPY . .
 EXPOSE 8080
 CMD [ "npm", "start" ]
 
-#prepare nginx
-FROM nginx:1.16.0-alpine
-
-COPY /app/build /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx/nginx.conf /etc/nginx/conf.d
-
-
-
-#fire up nginx
-EXPOSE 80 
-CMD ["nginx","-g","daemon off;"]
