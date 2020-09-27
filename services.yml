@@ -19,7 +19,7 @@ metadata:
     name: mongo
   name: mongo-controller
 spec:
-  replicas: 3
+  replicas: 2
   template:
     metadata:
       labels:
