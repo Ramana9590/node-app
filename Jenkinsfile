@@ -21,7 +21,7 @@ pipeline {
             steps{
                   
                 sshagent (credentials: ['kops-mechine']) {
-                                  sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml admin@54.242.126.19:/home/admin/"
+                                  sh "scp -o StrictHostKeyChecking=no services.yml pods.yml admin@54.242.126.19:/home/admin/"
 				    script{
 					    try{ 
                                               sh "ssh admin@54.242.126.19 kubectl apply -f ."
